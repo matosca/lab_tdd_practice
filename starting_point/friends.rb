@@ -40,10 +40,27 @@ def loan_of_money(lender, lendee, amount)
   lendee[:monies] += amount
 end
 
-def everyone_favourite_food(person)
-our_array = []
-  for person in @people
-   snacks = person[:favourites][:snacks]
-   our_array = snacks.join
+def favourite_food(people)
+  total_snacks = []
+  for person in people
+    total_snacks += person[:favourites][:snacks]
   end
+  return total_snacks
+end
+
+# def favourite_snack(people)
+#   all_snacks = []
+#   for person in people
+#     all_snacks += person[:favourites][:snacks]
+#   end
+#   return all_snacks
+# end
+
+def no_friends(people)
+  friendless = Array.new()
+
+  for person in people
+    person[:friends] == nil
+  end
+  return friendless.push(person[:name])
 end
